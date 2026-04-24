@@ -1,0 +1,278 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Esto deja el espacio exacto del header al scrollear */
+}
+body {
+    font-family: 'Alfa Slab one', sans-serif;
+    color: #e0e0e0;
+    background-color: #121212;
+    width: 100%;
+}
+.logo{
+    
+    width: 89px;
+}
+.logo:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+header{
+    display: flex;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    background-color: #12121291;
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    
+    justify-content: space-between;
+    align-items: center;
+    
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+  
+    
+}
+
+.nav-bar ul{
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+
+}
+.nav-bar ul li a{ 
+    text-decoration: none;
+    color: #ffffff;
+    align-items: center;
+
+}
+.nav-bar ul li a:hover{
+
+    color: #ff851b;
+}
+.banner {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('/recursos/yo.jpeg') no-repeat center/cover;
+    color: white;
+   width: 100%;         
+   height: 100vh;     
+    display: flex;         
+    align-items: center;   
+    padding: 0 10%;        
+    box-sizing: border-box; 
+
+    
+}
+  
+.banner-content h1 {
+    
+    font-family: 'Alfa Slab one',serif;
+    font-weight: 1000;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+   
+/* Ocultar botón en PC */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    gap: 5px;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #ff851b;
+    transition: 0.3s;
+}
+.color-1{
+    color: #ff851b;
+}
+
+.color-2{
+    color: #ffffff;
+    box-shadow: #000000;
+}
+
+/* Ajuste general para que las secciones no se desborden */
+.seccion {
+    padding: 60px 10%; 
+    height: auto;      
+    min-height: 50vh;
+    border:none;
+    border-top: 2px solid #ff851b;
+    background-color: #121212;
+}
+
+/* Grid de Proyectos */
+#proyectos ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding-top: 20px;
+}
+
+
+
+#proyectos ul li {
+    background: #505050;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+#proyectos ul li:hover {
+    transform: translateY(-5px);
+     box-shadow: 0 2px 10px #ff851b;
+}
+
+
+
+    
+    
+
+.seccion ul  {
+    list-style-type: none;
+    
+}
+.seccion ul li a{
+    text-decoration: none;
+    color: #121212;
+    
+}
+#sobre-mi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centra todo horizontalmente */
+    justify-content: center; 
+    text-align: center;      /* Alinea el texto al medio */
+    padding: 80px 10%;
+}
+
+#sobre-mi h2 {
+    margin-bottom: 20px;
+    width: 100%;             
+}
+
+#sobre-mi p{
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    max-width: 800px; 
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+}
+#contacto{
+    padding-top: 20px;
+   
+    background-color:#121212;
+   
+  
+}
+
+#contacto input, 
+#contacto textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+#contacto button {
+    padding: 10px 30px;
+    cursor: pointer;
+    background-color: #ff851b;;
+    color: #121212;;
+    border: none;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #0a0a0a;
+    padding: 40px 10%;
+    text-align: center;
+    border-top: 1px solid #ff851b;
+}
+
+.footer-content p {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.socials a {
+    color: #ff851b;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.socials a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Logo arriba, menú abajo */
+        gap: 15px;
+        text-align: center;
+    }
+
+    .nav-bar ul {
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .banner-content h1 {
+        font-size: 2.5rem; /* Texto más pequeño en móviles */
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostrar solo en móviles */
+        z-index: 1001;
+    }
+
+    .nav-bar {
+        position: fixed;
+        left: -100%; /* Escondido a la izquierda */
+        top: 0;
+        background-color: rgba(18, 18, 18, 0.95);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+    }
+
+    /* Clase que activaremos con JS */
+    .nav-bar.active {
+        left: 0;
+    }
+
+    .nav-bar ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .nav-bar ul li a {
+        font-size: 1.5rem;
+    }
+}
+
+
